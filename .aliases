@@ -14,8 +14,12 @@ alias la='ls -lah'
 alias td="git ls-tree -r --name-only HEAD | tree --fromfile"
 
 # CDing
-alias proj='cd @proj'
 alias ind='cd ~/indico'
+alias circ='cd ~/classes/circuits'
+alias comp='cd ~/classes/comparch'
+alias circuits='cd ~/classes/circuits'
+alias comparch='cd ~/classes/comparch'
+alias ar='cd ~/formula/ar/'
 
 # Applications
 alias atom='atom .'
@@ -28,10 +32,11 @@ alias vim='nvim'
 alias v='nvim'
 alias fd='fdfind'
 alias zl='zq -l'
-alias whereami='cat ~/address'
+alias whereami='cat ~/.address'
 alias open='xdg-open'
 alias ltspice='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 alias f="fzf --preview 'head -n `tput cols` {}'"
+alias mars="java -jar ~/Documents/Mars4_5.jar"
 
 wttr() {
   location=`whereami`
@@ -41,7 +46,7 @@ wttr() {
 }
 
 im_at() {
-  echo $1 | tee ~/address
+  echo $1 | tee ~/.address
 }
 
 # Tmux (not in tmux)
@@ -80,9 +85,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.ID}}\t{{.Status}}"'
 alias dc='docker-compose'
 alias dlogs='docker-compose logs -f'
-
-# K8s
-alias ke='kube exec'
 
 # Finding
 alias wheres='grep -rnw . -e'

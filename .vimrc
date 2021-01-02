@@ -64,6 +64,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'daeyun/vim-matlab'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -131,11 +134,12 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-
 """"""""""
 " REMAPS "
 """"""""""
 map <C-n> :NERDTreeToggle<CR>
+imap <C-BS> <C-W>
+noremap! <M-BS> <C-w>
 nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -150,77 +154,20 @@ vnoremap > >gv
 vnoremap < <gv
 cnoreabbrev ad ALEDisable
 cnoreabbrev ae ALEEnable
-tmap <Esc> <C-\><C-n>
+" tmap <Esc> <C-\><C-n>
 tmap <C-w> <Esc><C-w>
+tnoremap <Esc> <C-\><C-n>
+nnoremap <C-p> :GFiles<Cr>
 
 """"""""""""""
 " APPEARANCE "
 """"""""""""""
-colorscheme rigel
+" colorscheme rigel
 set termguicolors
 syntax enable
-" set fillchars+=vert:\▏
-set fillchars+=vert:\█
+set fillchars+=vert:\▏
+" set fillchars+=vert:\█
 highlight Comment cterm=italic gui=italic
 highlight MatchParen guibg=gray
 highlight NonText guifg=bg
 highlight Pmenu guibg=white guifg=black gui=bold
-
-
-"""""""
-" COC "
-"""""""
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-" 
-" " Use <c-space> to trigger completion.
-" if has('nvim')
-"   inoremap <silent><expr> <c-space> coc#refresh()
-" else
-"   inoremap <silent><expr> <c-@> coc#refresh()
-" endif
-" 
-" " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" " position. Coc only does snippet and additional edit on confirm.
-" " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-" if exists('*complete_info')
-"   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-" else
-"   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" endif
-" 
-" " Use `[g` and `]g` to navigate diagnostics
-" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-" nmap <silent> [g <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" 
-" " GoTo code navigation.
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-" 
-" " Use K to show documentation in preview window.
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-" 
-" nmap <leader>rn <Plug>(coc-rename)
-" 
-" " Formatting selected code.
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-" 
-" augroup mygroup
-"   autocmd!
-"   " Setup formatexpr specified filetype(s).
-"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-"   " Update signature help on jump placeholder.
-"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-" augroup end

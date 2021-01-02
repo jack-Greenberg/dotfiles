@@ -28,10 +28,15 @@ exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-
 set $mod Mod4
 
 # Screenshot
-bindsym --release $mod+x exec --no-startup-id "scrot -s '%Y-%m-%d_%H-%M_screenshot.png' -e 'mv $f ~/Pictures/'"
+exec --no-startup-id flameshot
+bindsym --release $mod+x exec --no-startup-id flameshot gui -p ~/Pictures/
+# bindsym --release $mod+x exec --no-startup-id "/home/jgreenberg/Pictures/scrot.sh"
 
 # Lock
 bindsym --release $mod+Escape exec --no-startup-id ~/.config/i3/lock.sh
+
+# BW
+bindsym --release $mod+p exec --no-startup-id bwpyro
 
 # Screensaver
 exec --no-startup-id xset dpms 600
@@ -182,7 +187,7 @@ bar {
         separator #002635
         background #002635
         statusline #002635
-        focused_workspace #ff5a67 #ff5a67 #ffffff
+        focused_workspace #7fc06e #7fc06e #ffffff
         active_workspace #c43061 #c43061 #ffffff
         inactive_workspace #002635 #002635 #e6e6dc
         urgent_workspace #f08e48 #f08e48 #ffffff

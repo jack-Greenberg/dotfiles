@@ -3,6 +3,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
+#     tmux_chooser && exit
+# fi
+
 # VARIABLES
 export GOPATH=$HOME/go
 export ZSH=$HOME/.oh-my-zsh
@@ -39,6 +43,7 @@ plugins=(
 # SOURCES
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.olinrc
 source $HOME/.spaceship
 [ ! -s /home/jgreenberg/.travis/travis.sh ] || source $HOME/.travis/travis.sh
 
@@ -53,5 +58,9 @@ eval "$(zoxide init zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(rbenv init -)"
+eval "$(thefuck --alias)"
+
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/bitcomplete bit
