@@ -24,34 +24,120 @@ mouse:
       program: x-www-browser
 
 # Rigel
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x002635'
+#     foreground: '0xe6e6dc'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x00384d'
+#     red:     '0xc43061'
+#     green:   '0x7fc06e'
+#     yellow:  '0xf08e48'
+#     blue:    '0x1c8db2'
+#     magenta: '0xc694ff'
+#     cyan:    '0x00cccc'
+#     white:   '0x77929e'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x517f8d'
+#     red:     '0xff5a67'
+#     green:   '0x9cf087'
+#     yellow:  '0xffcc1b'
+#     blue:    '0x7eb2dd'
+#     magenta: '0xfb94ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xb7cff9'
+# 
+#   cursor:
+#     text: "0x002635"
+#     cursor: "0xffcc1b"
+
+# Light
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0xffffff'
+#     foreground: '0x373b41'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x1d1f21'
+#     red:     '0xcc6666'
+#     green:   '0xb5bd68'
+#     yellow:  '0xf0c674'
+#     blue:    '0x81a2be'
+#     magenta: '0xb294bb'
+#     cyan:    '0x8abeb7'
+#     white:   '0xc5c8c6'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x969896'
+#     red:     '0xcc6666'
+#     green:   '0xb5bd68'
+#     yellow:  '0xf0c674'
+#     blue:    '0x81a2be'
+#     magenta: '0xb294bb'
+#     cyan:    '0x8abeb7'
+#     white:   '0xffffff'
+
+# Light (High contrast)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0xffffff'
+#     foreground: '0x606060'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff0000'
+#     green:   '0x33ff00'
+#     yellow:  '0xff0099'
+#     blue:    '0x0066ff'
+#     magenta: '0xcc00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xd0d0d0'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x808080'
+#     red:     '0xff0000'
+#     green:   '0x33ff00'
+#     yellow:  '0xff0099'
+#     blue:    '0x0066ff'
+#     magenta: '0xcc00ff'
+#     cyan:    '0x00ffff'
+#     white:   '0xffffff'
+
+# Fairy floss
 colors:
-  # Default colors
   primary:
-    background: '0x002635'
-    foreground: '0xe6e6dc'
-
-  # Normal colors
-  normal:
-    black:   '0x00384d'
-    red:     '0xc43061'
-    green:   '0x7fc06e'
-    yellow:  '0xf08e48'
-    blue:    '0x1c8db2'
-    magenta: '0xc694ff'
-    cyan:    '0x00cccc'
-    white:   '0x77929e'
-
-  # Bright colors
-  bright:
-    black:   '0x517f8d'
-    red:     '0xff5a67'
-    green:   '0x9cf087'
-    yellow:  '0xffcc1b'
-    blue:    '0x7eb2dd'
-    magenta: '0xfb94ff'
-    cyan:    '0x00ffff'
-    white:   '0xb7cff9'
-
+    background: '#5a5475'
+    foreground: '#f8f8f2'
   cursor:
-    text: "0x002635"
-    cursor: "0xffcc1b"
+    text: '#f8f8f2'
+    # cursor: '#c7b7c7'
+    cursor: '#7ef5b8'
+  normal:
+    black: '#3b3a32'
+    red: '#f1756f'
+    green: '#6de874'
+    yellow: '#e6c000'
+    blue: '#a381ff'
+    magenta: '#ff87b1'
+    cyan: '#7ef5b8'
+    white: '#c7b7c7'
+  bright:
+    black: '#685868'
+    red: '#ff9f9a'
+    green: '#7bfa81'
+    yellow: '#ffea00'
+    blue: '#c5a3ff'
+    magenta: '#ffb8d1'
+    cyan: '#c2ffdf'
+    white: '#ffefff'

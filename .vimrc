@@ -162,12 +162,15 @@ nnoremap <C-p> :GFiles<Cr>
 """"""""""""""
 " APPEARANCE "
 """"""""""""""
-" colorscheme rigel
-set termguicolors
+" set termguicolors
 syntax enable
 set fillchars+=vert:\▏
 " set fillchars+=vert:\█
-highlight Comment cterm=italic gui=italic
-highlight MatchParen guibg=gray
-highlight NonText guifg=bg
-highlight Pmenu guibg=white guifg=black gui=bold
+" highlight Comment gui=italic cterm=italic
+highlight LineNr guifg=black
+highlight CursorLineNr guifg=red
+highlight MatchParen guibg=gray ctermbg=gray
+highlight NonText guifg=NONE guibg=NONE
+highlight Pmenu guibg=black guifg=white gui=bold
+highlight clear Cursorline
+highlight CursorLine gui=underline cterm=underline
