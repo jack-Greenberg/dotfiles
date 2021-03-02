@@ -9,10 +9,13 @@ set cmdheight=2
 set number
 set nobackup
 set nowritebackup
+set noswapfile
 set updatetime=300
 set shortmess+=c
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 set showcmd
 set so=5
 set smarttab
@@ -32,12 +35,8 @@ set t_Co=256
 set wildignore+=.git/*,node_modules/,venv/,__pycache__/
 
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab " Yaml should be 2 spaces indent
-autocmd FileType toml setlocal shiftwidth=2 softtabstop=2 expandtab " Toml should be 2 spaces indent autocmd FileType sh setlocal shiftwidth=2 softtabstop=2 expandtab " Bash files should be 2 spaces indent
-
-" if has("autocmd")
-"   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-" endif
-
+autocmd FileType toml setlocal shiftwidth=2 softtabstop=2 expandtab " Toml should be 2 spaces indent
+autocmd FileType sh setlocal shiftwidth=2 softtabstop=2 expandtab " Bash files should be 2 spaces indent
 
 """""""""""
 " PLUGINS "
@@ -67,7 +66,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'daeyun/vim-matlab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -90,7 +88,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 let g:plug_window = 'noautocmd vertical topleft new'
 
-" let b:ale_linters = ['flake8']
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_linters = {'rust': ['analyzer'], 'python': ['flake8']}
@@ -142,7 +139,7 @@ imap <C-BS> <C-W>
 noremap! <M-BS> <C-w>
 nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
@@ -154,19 +151,18 @@ vnoremap > >gv
 vnoremap < <gv
 cnoreabbrev ad ALEDisable
 cnoreabbrev ae ALEEnable
-" tmap <Esc> <C-\><C-n>
 tmap <C-w> <Esc><C-w>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-p> :GFiles<Cr>
+map <esc> :noh<cr>
 
 """"""""""""""
 " APPEARANCE "
 """"""""""""""
-" set termguicolors
+set termguicolors
 syntax enable
 set fillchars+=vert:\▏
-" set fillchars+=vert:\█
-" highlight Comment gui=italic cterm=italic
+highlight Comment gui=italic cterm=italic
 highlight LineNr guifg=black
 highlight CursorLineNr guifg=red
 highlight MatchParen guibg=gray ctermbg=gray

@@ -13,6 +13,7 @@ export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
 export EDITOR=vim
 export ZSH_THEME=spaceship
+export ZEPHYR_BASE=~/zephyr/zephyr
 
 fpath+=~/.zfunc
 

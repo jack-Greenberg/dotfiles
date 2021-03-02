@@ -8,8 +8,13 @@ font:
     family: DejaVu Sans Mono
   bold:
     family: DejaVu Sans Mono
+    style: Bold
   italic:
     family: DejaVu Sans Mono
+    style: Oblique
+  bold_italic:
+    family: DejaVu Sans Mono
+    style: Bold Oblique
   size: 9.5
   offset:
     x: 0

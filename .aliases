@@ -50,7 +50,7 @@ im_at() {
 }
 
 # Tmux (not in tmux)
-alias tml='tmux ls'
+alias tml='tmux ls 2> /dev/null || echo "No tmux sessions."'
 alias tma='tmux attach -t'
 alias tmk='tmux kill-session -t'
 alias tmd='tmux detach'
